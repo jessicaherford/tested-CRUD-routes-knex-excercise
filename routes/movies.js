@@ -12,6 +12,14 @@ function movies(){
   return knex('movies');
 }
 
+function reviews(){
+  // console.log('**********');
+  // console.log(knex('restaurants'));
+  // console.log(knex('food'));
+  return knex('reviews');
+}
+
+
 router.get('/', function (req, res, next) {
   movies().select().then(function(results){
   res.render('movies/index', {movies: results});
