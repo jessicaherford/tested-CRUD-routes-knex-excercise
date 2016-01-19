@@ -26,6 +26,50 @@ router.get('/', function (req, res, next) {
   });
 })
 
+router.get('/new', function (req, res, next) {
+  movies().select().then(function(results){
+  res.render('movies/new', {movies: results});
+  });
+})
+
+router.post( '/', function (req, res, next) {
+  movies().select().then(function(results){
+  res.render('movies/show', {movies: results});
+  });
+})
+
+router.get('/new', function (req, res, next) {
+  movies().select().then(function(results){
+  res.render('movies/new', {movies: results});
+  });
+})
+
+
+router.get('/:id', function (req, res, next) {
+  movies().select().then(function(results){
+  res.render('movies/new', {movies: results});
+  });
+})
+
+router.get('/:id/edit', function (req, res, next) {
+  movies().select().then(function(results){
+  res.render('movies/new', {movies: results});
+  });
+})
+
+router.post('/:id', function (req, res, next) {
+  movies().select().then(function(results){
+  res.render('movies/new', {movies: results});
+  });
+})
+
+router.post('/:id/delete', function (req, res, next) {
+  movies().select().then(function(results){
+  res.render('movies/new', {movies: results});
+  });
+})
+
+
 router.get('/:movie_id/reviews', function (req, res, next) {
   movies().select().then(function(results){
   res.render('movies/show', {movies: results});
@@ -51,6 +95,7 @@ router.get( '/:movie_id/reviews/:id', function (req, res, next) {
   res.render('movies/show', {movies: results});
   });
 })
+
 
 router.get( '/:movie_id/reviews/:id/edit', function (req, res, next) {
   movies().select().then(function(results){
