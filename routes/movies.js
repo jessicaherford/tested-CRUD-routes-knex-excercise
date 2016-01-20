@@ -4,11 +4,8 @@ var router = express.Router();
 var knex = require('../db/knex');
 /* Movies Routes Go Here. */
 
-<<<<<<< HEAD
 var knex = require('../db/knex');
 
-=======
->>>>>>> 8973db64949ed3a6af98b6cb55fdf6c30040d50e
 
 function movies(){
   // console.log('**********');
@@ -17,12 +14,10 @@ function movies(){
   return knex('movies');
 }
 
-<<<<<<< HEAD
 function Reviews(){
   return knex('reviews');
 }
 
-=======
 function reviews(){
   // console.log('**********');
   // console.log(knex('restaurants'));
@@ -31,7 +26,6 @@ function reviews(){
 }
 
 
->>>>>>> 8973db64949ed3a6af98b6cb55fdf6c30040d50e
 router.get('/', function (req, res, next) {
   movies().select().then(function(results){
   res.render('movies/index', {movies: results});
@@ -57,7 +51,6 @@ router.get('/new', function (req, res, next) {
 })
 
 
-<<<<<<< HEAD
 router.get('/new', function (req, res, next) {
   res.render('movies/new');
 })
@@ -82,7 +75,6 @@ router.post('/:id/delete', function (req, res, next) {
   res.render('movies/show');
 })
 
-=======
 router.get('/:id', function (req, res, next) {
   movies().select().then(function(results){
   res.render('movies/new', {movies: results});
@@ -155,5 +147,4 @@ router.post( '/:movie_id/reviews/:id/delete', function (req, res, next) {
 
 
 
->>>>>>> 8973db64949ed3a6af98b6cb55fdf6c30040d50e
 module.exports = router;
