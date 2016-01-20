@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 
 router.get('/new', function (req, res, next) {
-  res.render('movies/show');
+  res.render('movies/new');
 })
 
 router.post('/', function (req, res, next) {
